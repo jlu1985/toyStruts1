@@ -4,6 +4,8 @@
           "http://struts.apache.org/dtds/struts-config_1_3.dtd">
 <struts-config>
 	<action-mappings>
-		<action path="/hello" type="jlu.struts.actions.HelloWorldAction"></action>
+		<action path="/list" type="jlu.struts.actions.ListContactsAction">
+			<forward name="view" path="/WEB-INF/jsp/list.jsp"/>
+		</action>
 	</action-mappings>
 </struts-config>
