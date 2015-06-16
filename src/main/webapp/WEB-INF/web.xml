@@ -5,7 +5,7 @@
 	version="3.1">
 	<display-name>learn-struts</display-name>
 	<welcome-file-list>
-		<welcome-file>list</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
 	</welcome-file-list>
 
 	<servlet>
@@ -20,6 +20,6 @@
 
 	<servlet-mapping>
 		<servlet-name>struts1</servlet-name>
-		<url-pattern>/</url-pattern>
+		<url-pattern>*.do</url-pattern>
 	</servlet-mapping>
 </web-app>

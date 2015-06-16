@@ -10,9 +10,10 @@
 <body>
 	<div id="nav">
 		<ul>
-			<li><a href=<c:url value="/newContact"/>>new</a></li>
-			<li><a href=<c:url value="/listContacts"/>>list</a></li>
-			<li><a href=<c:url value="/deleteContact"/>>delete</a></li>
+			<li><a href=<c:url value="/new"/>>new</a></li>
+			<li><a href=<c:url value="/list"/>>list</a></li>
+			<li><a href=<c:url value="/delete"/>>delete - need update, to take path delete {id}/delete</a></li>
+			<li><a href=<c:url value="/edit"/>>edit link - placeholder</a>
 
 		</ul>
 	</div>
@@ -28,7 +29,7 @@
 		</c:otherwise>
 	</c:choose>
 	<div id="messageDiv" style="display:${messageStyle}">
-		There is no content, <a href=<c:url value="/newContact"/>>click</a> to
+		There is no content, <a href=<c:url value="/new"/>>click</a> to
 		add a new one
 	</div>
 	<div id="contactsDiv" style="display:${contentStyle}">

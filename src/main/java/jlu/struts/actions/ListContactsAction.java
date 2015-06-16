@@ -1,8 +1,5 @@
 package jlu.struts.actions;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -11,6 +8,8 @@ import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
+import com.brainfuse.contact.dataaccess.BasicAccess;
+import com.brainfuse.contact.dataaccess.IoConstansts;
 import com.branfuse.contact.models.Contact;
 
 public class ListContactsAction extends Action {
@@ -18,12 +17,8 @@ public class ListContactsAction extends Action {
 	public ActionForward execute(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response)
 			throws Exception {
-
-		List<Contact> contacts = new ArrayList<>();
-		Contact c = new Contact();
-		c.setPersonName("mock");
-		contacts.add(c);
-		request.setAttribute("contacts", contacts);
+		BasicAccess<Contact> contactDao = (BasicAccess<Contact>) getServlet().getServletContext().getAttribute(IoConstansts.BASIC_ACCESS_CONTACT_NAME);
+		request.setAttribute("contacts", contactDao.find());
 		return mapping.findForward("view");
 
 	}
